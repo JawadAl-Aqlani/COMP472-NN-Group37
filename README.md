@@ -2,74 +2,61 @@
 **Group 37 | Concordia University**
 
 ## Project Overview
-This project compares machine learning algorithms on two classification tasks: image recognition and sentiment analysis. The datasets provide numerical feature vectors, so the models work directly with those features rather than raw images or text.
+This project compares machine learning algorithms for image recognition and sentiment analysis. The provided datasets contain numerical feature vectors rather than original images or text.
 
-We implemented and tested k-Nearest Neighbours (k-NN), Decision Tree, Random Forest and a feed-forward Neural Network. We also ran a k-Means clustering experiment to study patterns in the data.
+We implemented k-Nearest Neighbours (k-NN), Decision Tree and Random Forest using NumPy, trained a feed-forward neural network with PyTorch, and evaluated k-Means clustering.
 
 ## Datasets
-The project uses five files from the [COMP 472 Kaggle competition](https://www.kaggle.com/competitions/comp-472-project-fall-2026-concordia/data):
+Download the five competition CSV files from [Kaggle](https://www.kaggle.com/competitions/comp-472-project-fall-2026-concordia/data) and place them in the `data/` folder.
 
-- `image_train.csv` — 20,000 training samples, 500 features, 50 classes
-- `image_test.csv` — 5,000 test samples
-- `sentiment_train.csv` — 12,000 training samples, 768 features, 3 classes
-- `sentiment_test.csv` — 5,000 test samples
-- `sample_submission.csv` — submission template
+| File | Samples | Description |
+|---|---:|---|
+| `image_train.csv` | 20,000 | Labeled image features |
+| `image_test.csv` | 5,000 | Image features to classify |
+| `sentiment_train.csv` | 12,000 | Labeled sentiment embeddings |
+| `sentiment_test.csv` | 5,000 | Sentiment embeddings to classify |
+| `sample_submission.csv` | 10,000 | Kaggle prediction template |
 
-Place these files in the `data/` folder. They are not included in this repository.
+The original data files and hidden-test predictions are not committed to this repository.
 
 ## Project Files
-- `src/models.py` — implementations of k-NN, Decision Tree, Random Forest and k-Means
-- `src/run_project.py` — training, validation, neural network, clustering and baseline predictions
-- `src/test_project.py` — basic tests for the implementations and input files
-- `create_submission_v3.py` — improved image k-NN model (v3)
-- `create_submission_v4.py` — five independently trained sentiment neural networks combined with the v3 image predictions (final Kaggle model)
-- `results/` — experiment summaries and evaluation results
-- `requirements.txt` — Python dependencies
+- `src/models.py` — from-scratch k-NN, Decision Tree, Random Forest and k-Means
+- `src/run_project.py` — model comparisons, validation, neural network training and clustering experiments
+- `src/test_project.py` — basic implementation and submission tests
+- `image_knn.py` — weighted cosine k-NN classifier for image predictions
+- `create_submission.py` — final Kaggle prediction script combining the image classifier and a five-network sentiment ensemble
+- `results/` — saved experiment summaries and metrics
+- `requirements.txt` — required Python packages
 
 ## How to Run
-Install the required packages:
+From the project folder:
 
 ```powershell
 python -m pip install -r requirements.txt
-```
-
-Check the project files and basic functions:
-
-```powershell
-python src/test_project.py
-```
-
-Run the experiments and generate the initial predictions:
-
-```powershell
 python src/run_project.py
+python src/test_project.py
+python create_submission.py
 ```
 
-Generate the final Kaggle submission:
-
-```powershell
-python create_submission_v3.py
-python create_submission_v4.py
-```
-
-The v3 script creates `results/submission_v3.csv` using improved image k-NN and sentiment predictions from `run_project.py`. The v4 script trains five sentiment neural networks using the supplied training data and combines their averaged outputs with **unchanged v3 image predictions** to create `results/submission_v4.csv`. Run these commands in order. The competition datasets and prediction CSVs are not committed to GitHub.
+The final command creates **`results/submission.csv`** with 10,000 predictions matched to Kaggle's sample IDs. It uses only the supplied training data to fit the image classifier and the sentiment neural networks. Running the project requires the five CSV files in `data/`.
 
 ## Results
-The models were compared using an 80/20 stratified training-validation split with random seed 42.
+We used an 80/20 stratified train-validation split with random seed 42.
 
-| Task | Selected model | Validation accuracy |
+| Task | Final approach | Validation accuracy |
 |---|---|---:|
-| Image recognition | Weighted cosine k-NN (k = 11) | 59.275% |
-| Sentiment analysis (original) | Feed-forward Neural Network | 67.21% |
-| Sentiment analysis (v4) | Five-network neural ensemble | 67.625% |
+| Image recognition | Weighted cosine k-NN (k=11) | 59.275% |
+| Sentiment analysis | Five-network PyTorch ensemble | 67.625% |
 
-The improved image model applies a square-root transformation and feature weighting before cosine-based neighbour voting. The reported public Kaggle score for our final **v4** submission was **0.639**. This is a public leaderboard result, not a guarantee of the final private leaderboard score. Our earlier v3 submission scored 0.635.
+The image classifier applies square-root feature transformation and training-derived feature weights before cosine neighbour voting. The sentiment classifier averages the outputs of five separately trained neural networks.
 
-Further results for all required algorithms and the clustering experiment are available in the `results/` folder.
+**Reported public Kaggle score: 0.639.** This is the score of our selected competition submission, not a result from the hidden private leaderboard. Re-training can produce slightly different results depending on the environment.
+
+Full comparison experiments for the required algorithms and clustering are in the `results/` folder.
 
 ## Team Members
 - Jawad Al-Aqlani — 40272579
 - Abd Al Rahman Al Kabani — 40247395
 
 ## Acknowledgements
-We used course materials, Python library documentation and AI assistance for coding, debugging, analysis and presentation preparation. The submitted report describes the project methodology and external assistance in more detail.
+Course materials, Python library documentation and AI assistance were used for code development, debugging, analysis and presentation preparation. External assistance is also documented in the project report.
