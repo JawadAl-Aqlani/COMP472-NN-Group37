@@ -1,0 +1,21 @@
+dataset,model,params,validation_accuracy,seconds
+sentiment,KNN,"{""k"": 1, ""weighted"": true, ""metric"": ""euclidean"", ""scale"": ""standard""}",0.503333,0.26
+sentiment,KNN,"{""k"": 3, ""weighted"": true, ""metric"": ""euclidean"", ""scale"": ""standard""}",0.529167,0.3
+sentiment,KNN,"{""k"": 7, ""weighted"": true, ""metric"": ""euclidean"", ""scale"": ""standard""}",0.556667,0.26
+sentiment,KNN,"{""k"": 15, ""weighted"": true, ""metric"": ""euclidean"", ""scale"": ""standard""}",0.569167,0.26
+sentiment,KNN,"{""k"": 1, ""weighted"": true, ""metric"": ""cosine"", ""scale"": ""standard""}",0.497083,0.26
+sentiment,KNN,"{""k"": 3, ""weighted"": true, ""metric"": ""cosine"", ""scale"": ""standard""}",0.528333,0.3
+sentiment,KNN,"{""k"": 7, ""weighted"": true, ""metric"": ""cosine"", ""scale"": ""standard""}",0.556667,0.26
+sentiment,KNN,"{""k"": 15, ""weighted"": true, ""metric"": ""cosine"", ""scale"": ""standard""}",0.569167,0.26
+sentiment,KNN,"{""k"": 1, ""weighted"": true, ""metric"": ""cosine"", ""scale"": ""raw""}",0.511667,0.27
+sentiment,KNN,"{""k"": 3, ""weighted"": true, ""metric"": ""cosine"", ""scale"": ""raw""}",0.5325,0.28
+sentiment,KNN,"{""k"": 5, ""weighted"": true, ""metric"": ""cosine"", ""scale"": ""raw""}",0.54375,0.26
+sentiment,KNN,"{""k"": 1, ""weighted"": true, ""metric"": ""euclidean"", ""scale"": ""raw""}",0.50125,0.25
+sentiment,KNN,"{""k"": 3, ""weighted"": true, ""metric"": ""euclidean"", ""scale"": ""raw""}",0.52875,0.25
+sentiment,KNN,"{""k"": 5, ""weighted"": true, ""metric"": ""euclidean"", ""scale"": ""raw""}",0.544583,0.26
+sentiment,DecisionTree,"{""max_depth"": 6, ""min_samples_leaf"": 8, ""max_features"": 80, ""n_thresholds"": 8}",0.469583,1.19
+sentiment,DecisionTree,"{""max_depth"": 12, ""min_samples_leaf"": 8, ""max_features"": 80, ""n_thresholds"": 8}",0.454167,7.37
+sentiment,RandomForest,"{""n_estimators"": 8, ""max_depth"": 12, ""min_samples_leaf"": 6, ""n_thresholds"": 6, ""max_samples"": 0.7}",0.486667,16.26
+sentiment,RandomForest,"{""n_estimators"": 20, ""max_depth"": 12, ""min_samples_leaf"": 6, ""n_thresholds"": 6, ""max_samples"": 0.7}",0.52125,44.31
+sentiment,NeuralNetwork,"{""learning_rate"": 0.001, ""best_epoch"": 6, ""dropout"": 0.25}",0.666667,4.21
+sentiment,NeuralNetwork,"{""learning_rate"": 0.0003, ""best_epoch"": 6, ""dropout"": 0.25}",0.672083,5.78
