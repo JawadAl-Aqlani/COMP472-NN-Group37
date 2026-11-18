@@ -1,0 +1,21 @@
+dataset,model,params,validation_accuracy,seconds
+image,KNN,"{""k"": 1, ""weighted"": true, ""metric"": ""euclidean"", ""scale"": ""standard""}",0.43425,0.61
+image,KNN,"{""k"": 3, ""weighted"": true, ""metric"": ""euclidean"", ""scale"": ""standard""}",0.416,0.58
+image,KNN,"{""k"": 7, ""weighted"": true, ""metric"": ""euclidean"", ""scale"": ""standard""}",0.342,0.57
+image,KNN,"{""k"": 15, ""weighted"": true, ""metric"": ""euclidean"", ""scale"": ""standard""}",0.28675,0.56
+image,KNN,"{""k"": 1, ""weighted"": true, ""metric"": ""cosine"", ""scale"": ""standard""}",0.534,0.58
+image,KNN,"{""k"": 3, ""weighted"": true, ""metric"": ""cosine"", ""scale"": ""standard""}",0.5265,0.61
+image,KNN,"{""k"": 7, ""weighted"": true, ""metric"": ""cosine"", ""scale"": ""standard""}",0.488,0.59
+image,KNN,"{""k"": 15, ""weighted"": true, ""metric"": ""cosine"", ""scale"": ""standard""}",0.4395,0.59
+image,KNN,"{""k"": 1, ""weighted"": true, ""metric"": ""cosine"", ""scale"": ""raw""}",0.53075,0.59
+image,KNN,"{""k"": 3, ""weighted"": true, ""metric"": ""cosine"", ""scale"": ""raw""}",0.521,0.58
+image,KNN,"{""k"": 5, ""weighted"": true, ""metric"": ""cosine"", ""scale"": ""raw""}",0.49225,0.59
+image,KNN,"{""k"": 1, ""weighted"": true, ""metric"": ""euclidean"", ""scale"": ""raw""}",0.53075,0.58
+image,KNN,"{""k"": 3, ""weighted"": true, ""metric"": ""euclidean"", ""scale"": ""raw""}",0.52125,0.56
+image,KNN,"{""k"": 5, ""weighted"": true, ""metric"": ""euclidean"", ""scale"": ""raw""}",0.492,0.57
+image,DecisionTree,"{""max_depth"": 6, ""min_samples_leaf"": 8, ""max_features"": 64, ""n_thresholds"": 8}",0.062,0.44
+image,DecisionTree,"{""max_depth"": 12, ""min_samples_leaf"": 8, ""max_features"": 64, ""n_thresholds"": 8}",0.075,2.08
+image,RandomForest,"{""n_estimators"": 8, ""max_depth"": 12, ""min_samples_leaf"": 6, ""n_thresholds"": 6, ""max_samples"": 0.7}",0.09825,5.48
+image,RandomForest,"{""n_estimators"": 20, ""max_depth"": 12, ""min_samples_leaf"": 6, ""n_thresholds"": 6, ""max_samples"": 0.7}",0.1215,14.32
+image,NeuralNetwork,"{""learning_rate"": 0.001, ""best_epoch"": 10, ""dropout"": 0.25}",0.34025,7.43
+image,NeuralNetwork,"{""learning_rate"": 0.0003, ""best_epoch"": 18, ""dropout"": 0.25}",0.32325,10.8
