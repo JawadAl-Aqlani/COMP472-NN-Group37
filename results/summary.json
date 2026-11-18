@@ -1,0 +1,31 @@
+{
+  "selections": [
+    {
+      "dataset": "image",
+      "selected_model": "KNN",
+      "parameters": {
+        "k": 1,
+        "weighted": true,
+        "metric": "cosine",
+        "scale": "standard"
+      },
+      "validation_accuracy": 0.534
+    },
+    {
+      "dataset": "sentiment",
+      "selected_model": "NeuralNetwork",
+      "parameters": {
+        "learning_rate": 0.0003,
+        "best_epoch": 6,
+        "dropout": 0.25
+      },
+      "validation_accuracy": 0.672083
+    }
+  ],
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "torch": "2.10.0+cpu",
+  "seed": 42,
+  "validation_split": 0.2
+}
