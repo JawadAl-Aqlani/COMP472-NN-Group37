@@ -1,0 +1,8 @@
+data/
+results/*predictions*.csv
+results/submission*.csv
+results/*_final_nn.pt
+__pycache__/
+*.py[cod]
+.venv/
+.env
