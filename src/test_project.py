@@ -51,16 +51,18 @@ def test_submission():
 
 
 def test_data():
-    expected={'image_train.csv':20000,'image_test.csv':5000,'sentiment_train.csv':12000,'sentiment_test.csv':5000}
-    for fn,n in expected.items():
-        f=DATA/fn
+    for kind,expected_rows,n_features in [('image_train',20000,500),('image_test',5000,500),('sentiment_train',12000,768),('sentiment_test',5000,768)]:
+        f=DATA/f'{kind}.csv'
         assert f.exists(),f'Missing {f}'
-        assert len(pd.read_csv(f,usecols=['id']))==n,(fn,n)
-        print(f'PASS {fn[:-4]}: {n:,} rows')
-    test_submission()
-
+        df=pd.read_csv(f)
+        assert len(df)==expected_rows
+        assert df.id.is_unique
+        assert set(f'feature_{i}' for i in range(n_features)).issubset(df.columns)
+        assert df.notna().all().all()
+        print(f'PASS {kind}: {len(df):,} rows')
 
 if __name__=='__main__':
     test_algorithms()
     test_data()
+    test_submission()
     print('ALL QUICK TESTS PASSED')
