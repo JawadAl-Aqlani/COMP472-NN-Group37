@@ -25,6 +25,7 @@ The original data files and hidden-test predictions are not committed to this re
 - `src/test_project.py` — basic implementation and submission tests
 - `image_knn.py` — weighted cosine k-NN classifier for image predictions
 - `create_submission.py` — final Kaggle prediction script combining the image classifier and a five-network sentiment ensemble
+- `create_submission_v5.py` — optional alternative image ensemble used for the second Kaggle selection
 - `results/` — saved experiment summaries and metrics
 - `requirements.txt` — required Python packages
 
@@ -39,6 +40,8 @@ python create_submission.py
 ```
 
 The final command creates **`results/submission.csv`** with 10,000 predictions matched to Kaggle's sample IDs. It uses only the supplied training data to fit the image classifier and the sentiment neural networks. Running the project requires the five CSV files in `data/`.
+
+To generate the alternative v5 submission after the final script, run `python create_submission_v5.py`. This creates `results/submission_v5.csv` while reusing the sentiment predictions in `results/submission.csv`.
 
 ## Results
 We used an 80/20 stratified train-validation split with random seed 42.
