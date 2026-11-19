@@ -61,4 +61,4 @@ Full comparison experiments for the required algorithms and clustering are in th
 - Abd Al Rahman Al Kabani — 40247395
 
 ## Acknowledgements
-Course materials, Python library documentation and AI assistance were used for code development, debugging, analysis and presentation preparation. External assistance is also documented in the project report.
+Course materials, Python documentation, and AI tools were used to support code development and debugging.
