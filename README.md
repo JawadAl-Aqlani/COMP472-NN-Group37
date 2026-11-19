@@ -23,8 +23,7 @@ The original data files and hidden-test predictions are not committed to this re
 - `src/models.py` — from-scratch k-NN, Decision Tree, Random Forest and k-Means
 - `src/run_project.py` — model comparisons, validation, neural network training and clustering experiments
 - `src/test_project.py` — basic implementation and submission tests
-- `image_knn.py` — weighted cosine k-NN classifier for image predictions
-- `create_submission.py` — final Kaggle prediction script combining the image classifier and a five-network sentiment ensemble
+- `create_submission.py` — final Kaggle prediction script containing the weighted cosine image k-NN and five-network sentiment ensemble
 - `create_submission_v5.py` — optional alternative image ensemble used for the second Kaggle selection
 - `results/` — saved experiment summaries and metrics
 - `requirements.txt` — required Python packages
