@@ -17,9 +17,10 @@ Download the five competition CSV files from [Kaggle](https://www.kaggle.com/com
 | `sentiment_test.csv` | 5,000 | Sentiment embeddings to classify |
 | `sample_submission.csv` | 10,000 | Kaggle prediction template |
 
-The original data files and hidden-test predictions are not committed to this repository.
+The original data files and hidden-test predictions are not committed to this repository. To download the official competition data to your local `data/` folder, install the Kaggle CLI (`python -m pip install kaggle`), authenticate with your own Kaggle account and accept the competition rules, then run `python download_data.py`. Alternatively, extract the five CSVs manually into `data/`. Never commit your Kaggle API key.
 
 ## Project Files
+- `download_data.py` — optional download of the official Kaggle CSVs to a local `data/` folder
 - `src/models.py` — from-scratch k-NN, Decision Tree, Random Forest and k-Means
 - `src/run_project.py` — model comparisons, validation, neural network training and clustering experiments
 - `src/test_project.py` — basic implementation and submission tests
