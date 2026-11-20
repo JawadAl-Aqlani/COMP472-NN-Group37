@@ -7,7 +7,7 @@ This project compares machine learning algorithms for image recognition and sent
 We implemented k-Nearest Neighbours (k-NN), Decision Tree and Random Forest using NumPy, trained a feed-forward neural network with PyTorch, and evaluated k-Means clustering.
 
 ## Datasets
-Download the five competition CSV files from [Kaggle](https://www.kaggle.com/competitions/comp-472-project-fall-2026-concordia/data) and place them in the `data/` folder.
+**Required before running the code:** Download the Kaggle competition dataset, including the image training/test data and sentiment training/test data, from the [official Kaggle competition page](https://www.kaggle.com/competitions/comp-472-project-fall-2026-concordia/data). Extract all five CSV files into a folder called `data` at the root of this project. The code will not run without these files.
 
 | File | Samples | Description |
 |---|---:|---|
@@ -30,7 +30,25 @@ The original data files and hidden-test predictions are not committed to this re
 - `requirements.txt` — required Python packages
 
 ## How to Run
-From the project folder:
+**First, add the Kaggle datasets.** The folder structure must look like this:
+
+```text
+COMP472-NN-Group37/
+  data/
+    image_train.csv
+    image_test.csv
+    sentiment_train.csv
+    sentiment_test.csv
+    sample_submission.csv
+  src/
+  create_submission.py
+  create_submission_v5.py
+  requirements.txt
+```
+
+The `data` folder must be created locally because the datasets are not included in the GitHub repository. Do not place the CSV files inside `src/` or leave them inside the downloaded ZIP. If a CSV is missing, the scripts will raise a `FileNotFoundError`.
+
+After adding the Kaggle files, open a terminal in the project folder:
 
 ```powershell
 python -m pip install -r requirements.txt
